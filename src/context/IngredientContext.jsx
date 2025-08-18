@@ -13,18 +13,22 @@ export default function IngredientProvider({ children }) {
 
     function addIngredient() {
         if (currentIngredient.trim() !== "") {
-            setIngredient([...ingredient, currentIngredient.trim()]);
+
+            let ingredientToAdd = {
+                id: Date.now(),
+                nom: currentIngredient
+            }
+            setIngredient([...ingredient, ingredientToAdd]);
             setCurrentIngredient("");
         }
     }
 
-    function removeIngredient(index) {
-        const newList = ingredient.filter((_, i) => i !== index);
-        setIngredient(newList);
+    function removeIngredient(id) {
+        setIngredient(ingredient.filter(elt =>  elt.id !== id ))
     }
 
     return (
-        <IngredientContext.Provider value={{ingredient, currentIngredient, len, addIngredient, removeIngredient}}>
+        <IngredientContext.Provider value={{ingredient, currentIngredient, len, addIngredient, removeIngredient, setCurrentIngredient}}>
             {children}
         </IngredientContext.Provider>
     )

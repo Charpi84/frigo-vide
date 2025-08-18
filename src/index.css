@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 500px;
+    height: 932px;
+    display: flex;
+    margin: auto;
+}
+
+.card {
+    padding: 8px;
+    border-radius: 8px;
+    width: 170px;
+    height: 230px;
+    border: solid 2px black;
+    border-right: solid 4px black;
+    border-bottom: solid 6px black;
+    img{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+
+.btn {
+    border: solid 2px black;
+    border-right: solid 4px black;
+    border-bottom: solid 6px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 42px;
+    padding-right: 42px;
+    width: 160px;
+    height: 51px;
+    border-radius: 8px;
+    background-color: #FF5900;
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 55px;
+    background-color: #000000;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#root {
+    width: 100vw;
+    max-width: 500px;
+}
+
+.cuisine {
+    display: flex;
+}
+
+.liste-recettes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}

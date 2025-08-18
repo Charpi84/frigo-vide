@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import { Route, Routes } from "react-router";;
 import Recette from './pages/Recette';
 import Favoris from './pages/Favoris';
 import Accueil from './pages/Accueil';
@@ -10,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Accueil/>} />
-        <Route path="/recette" element={<Recette/>} />
+        <Route path="/recette" element={<Recette/>}  />
         <Route path="/recette/:id" element={<RecetteDetail/>} />
         <Route path="/favoris" element={<Favoris/>} />
       </Routes>

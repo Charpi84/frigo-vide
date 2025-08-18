@@ -1,13 +1,13 @@
 import { NavLink } from "react-router"
+import Navbar from './../components/Navbar';
 
-export default function Favoris(){
+export default function Favoris() {
 
 
-    return(
+    return (
         <div>
             <h1>Voici la page Favoris </h1>
-
-            <NavLink to={'/'}>Retour à l'accueil</NavLink>
+            <Navbar/>
         </div>
 
     )
