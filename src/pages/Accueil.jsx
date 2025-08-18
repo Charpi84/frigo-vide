@@ -8,9 +8,10 @@ export default function Accueil() {
   const { len, ingredient, currentIngredient, setCurrentIngredient, addIngredient } = useIngredient()
   let navigate = useNavigate()
   return (
-    <div>
-      <h1>Vous avez: {len} ingredients</h1>
+    <>
+      
       <div className="editor">
+        <h1>Vous avez: {len} ingredients</h1>
         <input type="text" name="tache" id="tache" value={currentIngredient} onChange={(e) => { setCurrentIngredient(e.target.value) }} />
         <div className="btn" onClick={addIngredient}>Ajouter l'ingredient</div>
         <div className="liste">
@@ -19,11 +20,13 @@ export default function Accueil() {
               return <Ingredients key={elt.id} content={elt} />
             })
           }
-          <button onClick={() => navigate("/recette")}>Rechercher</button>
+
         </div>
+        <button onClick={() => navigate("/recette")} className="btn">GO</button>
+        <Navbar />
       </div>
-      <Navbar />
-    </div>
+      
+    </>
 
   )
 }
