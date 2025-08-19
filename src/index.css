@@ -9,10 +9,35 @@ body {
     height: 932px;
     display: flex;
     margin: auto;
-    background-color: #f5f5f5;
+    background-color: #FFF1EA;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.accueil{
+    width: 80%;
+    margin:auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    img{
+        width: 100%;
+    }
+    .accueil-slogan{
+        text-align: center;
+    }
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #ffffff;
     padding: 8px;
     border-radius: 8px;
     width: 170px;
@@ -23,10 +48,14 @@ body {
 
     img {
         width: 100%;
+        height: 70%;
         border-radius: 5px;
     }
 }
 
+.contenu {
+    width: 100%;
+}
 
 .btn {
     border: solid 2px black;
@@ -41,7 +70,30 @@ body {
     border-radius: 8px;
     background-color: #FF5900;
     color: #ffffff;
+    
 }
+.btn:active{
+        border: solid 2px black;
+    }
+
+.btn-primary {
+    border: solid 2px black;
+    border-right: solid 4px black;
+    border-bottom: solid 6px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 86px;
+    width: 186px;
+    border-radius: 8px;
+    background-color: #FF5900;
+    color: #ffffff;
+    margin: 81px;
+    
+}
+.btn-primary:active{
+        border: solid 2px black;
+    }
 
 .navbar {
     position: fixed;
@@ -54,6 +106,14 @@ body {
     width: 100%;
     height: 55px;
     background-color: #000000;
+
+    a {
+        color: #ffffff;
+    }
+
+    a.active {
+        color: #FF5900;
+    }
 
 }
 
@@ -71,35 +131,168 @@ a {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    margin: 1rem;
+    margin: 16px 0;
     padding-bottom: 55px;
 }
 
 .liste {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
     border: solid 2px black;
     border-right: solid 4px black;
     border-bottom: solid 6px black;
     border-radius: 8px;
-    width: 90%;
-    flex: 1;
+    height: 400px;
     padding: 1rem;
     background-color: #ffffff;
-    
+    overflow-y: auto;
+
 }
 
 .editor {
     display: flex;
     flex-direction: column;
     flex: 1;
-    align-items: center;
-    gap: 1rem;
+    gap: 35px;
     padding-bottom: 55px;
+    background-color: #FFF1EA;
 }
 
-.contenu {
-    width: 100%;
-    height: 100%;
+.ingredient-input {
+    height: 45px;
+    border-radius: 8px;
+    border: solid 1px black;
+}
+
+
+.ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.title {
+    margin: 40px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.cuisine {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        ;
+    }
+}
+
+.detail{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+.presentation-recette {
+    display: flex;
+    gap: 16px;
+    background-color: #fff1ea;
+    border-radius: 8px;
+
+    img {
+        width: 150px;
+        height: 135px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+
+.favorite {
+    display: flex;
+    gap: 10px;
+    color: #FF5900;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.icon-fav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.preparation {
+    background-color: hsla(24, 48%, 11%, 0.1);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .ing-list {
+        border: solid 2px black;
+        border-right: solid 4px black;
+        border-bottom: solid 6px black;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #ffffff;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            li{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    }
+
+    .step-list {
+        border: solid 2px black;
+        border-right: solid 4px black;
+        border-bottom: solid 6px black;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #ffffff;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            li{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.content {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.ing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 85%;
+    margin: 1rem auto;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 85%;
+    margin: 1rem auto;
 }

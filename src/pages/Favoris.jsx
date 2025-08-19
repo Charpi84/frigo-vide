@@ -5,7 +5,7 @@ export default function Favoris() {
 
 
     return (
-        <div>
+        <div className="content">
             <h1>Voici la page Favoris </h1>
             <Navbar/>
         </div>
