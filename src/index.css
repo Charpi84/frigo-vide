@@ -4,6 +4,54 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Jura";
+    src: url("fonts/Jura-Regular.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Jura-bold";
+    src: url("fonts/Jura-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Jua";
+    src: url("fonts/Jua-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 42px;
+    font-family: "Jua";
+}
+
+h2 {
+    font-family: "Jua", sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+h3 {
+    font-family: "Jua", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+h4 {
+    font-family: "Jura";
+    font-size: 16px;
+    font-weight: unset;
+}
+
+p {
+    font-family: "Jura";
+}
+
 body {
     width: 430px;
     height: 932px;
@@ -33,6 +81,14 @@ li {
 
     .accueil-slogan {
         text-align: center;
+
+        p {
+            font-family: "Jura";
+        }
+
+        .bold {
+            font-family: "Jura-blod";
+        }
     }
 }
 
@@ -63,6 +119,10 @@ li {
         right: 0;
         border-radius: 8px;
     }
+
+    .card-title {
+        font-family: "Jua";
+    }
 }
 
 .contenu {
@@ -76,12 +136,13 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 42px;
-    padding-right: 42px;
-    height: 51px;
+    padding: 0 42px;
+    height: 60px;
     border-radius: 8px;
     background-color: #FF5900;
     color: #ffffff;
+    font-family: "Jura-bold";
+    text-align: center;
 
 }
 
@@ -96,13 +157,14 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
     height: 86px;
     width: 186px;
     border-radius: 8px;
     background-color: #FF5900;
     color: #ffffff;
-    margin: 81px;
-
+    font-family: "Jura-bold";
+    font-size: 32px;
 }
 
 .btn-primary:active {
@@ -181,6 +243,11 @@ a {
     gap: 35px;
     padding-bottom: 55px;
     background-color: #FFF1EA;
+
+    .liste-title {
+        font-family: "Jua";
+        font-size: 22px;
+    }
 }
 
 .ingredient-input {
@@ -327,5 +394,7 @@ a {
 
 .s,
 .i {
+    font-family: "Jura";
     font-size: 12px;
 }
+

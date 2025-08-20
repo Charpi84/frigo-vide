@@ -33,7 +33,7 @@ export default function Accueil() {
             <img src="images/frigo.png" alt="frigo" />
           </div>
           <div className="accueil-slogan">
-            <p>L’application qui t’aide à mieux manger en utilisant tes restes et en économisant au maximum !</p>
+            <p>L’application qui t’aide à <span className="bold">mieux manger</span> en utilisant tes restes et en <span className="bold">économisant</span> au maximum !</p>
           </div>
           <div className="accueil-btn">
             <div className="btn" onClick={passerAccueil}>Qu'y a t-il dans ton frigo?</div>
@@ -55,7 +55,7 @@ export default function Accueil() {
               Ajouter l'ingrédient
             </div>
             <div className="liste">
-              <h2>Dans mon frigo, il y a :</h2>
+              <span className="liste-title">Dans mon frigo, il y a :</span>
               {ingredient.map((elt) => (
                 <Ingredients key={elt.id} content={elt} />
               ))}
