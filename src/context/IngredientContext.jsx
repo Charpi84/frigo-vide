@@ -1,15 +1,11 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 const IngredientContext = createContext()
 
 export default function IngredientProvider({ children }) {
     const [ingredient, setIngredient] = useState([])
     const [currentIngredient, setCurrentIngredient] = useState("")
-    const [len, setLen] = useState(ingredient.length)
 
-    useEffect(() => {
-        setLen(ingredient.length)
-    }, [ingredient])
 
     function addIngredient() {
         if (currentIngredient.trim() !== "") {
@@ -28,7 +24,7 @@ export default function IngredientProvider({ children }) {
     }
 
     return (
-        <IngredientContext.Provider value={{ingredient, currentIngredient, len, addIngredient, removeIngredient, setCurrentIngredient}}>
+        <IngredientContext.Provider value={{ingredient, currentIngredient, addIngredient, removeIngredient, setCurrentIngredient}}>
             {children}
         </IngredientContext.Provider>
     )

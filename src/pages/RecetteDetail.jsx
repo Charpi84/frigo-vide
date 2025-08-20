@@ -1,9 +1,13 @@
 import { useParams, NavLink, useNavigate } from "react-router";
 import lesRecettes from "../data/recettes_cuisine.json";
 import { ArrowLeftIcon, BookmarkSimpleIcon, ClockIcon, SpinnerIcon, UserIcon } from "@phosphor-icons/react";
+import { useFavoris } from "../context/FavorisContext";
 
 export default function RecetteDetail() {
     const { id } = useParams();
+    const { isFavoris, toggleFav } = useFavoris()
+    const actif = isFavoris(id)
+    
     const navigate = useNavigate()
 
     const recette = lesRecettes.find((laRecette) => laRecette.id === parseInt(id));
@@ -23,12 +27,13 @@ export default function RecetteDetail() {
                     <img src={recette.image} alt={recette.nom} />
 
                     <div className="icon-fav"><div className="cuisine">
-                        <div className="info"><ClockIcon size={16} /> <p>{recette.temps_preparation}</p></div>
-                        <div className="info"><UserIcon size={16} /> <p>{recette.nombre_personnes} personnes</p></div>
-                        <div className="info"><SpinnerIcon size={16} /> <p>{recette.temps_cuisson}</p></div>
+                        <div className="info"><ClockIcon size={16} weight="bold" /> <p>{recette.temps_preparation}</p></div>
+                        <div className="info"><UserIcon size={16} weight="bold" /> <p>{recette.nombre_personnes} personnes</p></div>
+                        <div className="info"><SpinnerIcon size={16} weight="bold" /> <p>{recette.temps_cuisson}</p></div>
                     </div>
-                        <div className="favorite" >
-                            <BookmarkSimpleIcon size={16} weight="bold" /> <span>Ajouter au favoris</span>
+                        <div className="favorite" onClick={() => toggleFav(id)}>
+                            <BookmarkSimpleIcon size={16} weight={actif ? "fill" : "bold"} />
+                            <span>{actif ? "Retirer des favoris" : "Ajouter aux favoris"}</span>
                         </div>
                     </div>
                 </div>

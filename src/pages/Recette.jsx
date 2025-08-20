@@ -3,7 +3,7 @@ import Card from "../components/Card"
 import lesRecettes from "../data/recettes_cuisine.json"
 import { useIngredient } from "../context/IngredientContext"
 import Navbar from "../components/Navbar"
-import { ArrowLeftIcon } from "@phosphor-icons/react"
+import { ArrowLeftIcon, BookmarkSimpleIcon } from "@phosphor-icons/react"
 
 export default function Recette() {
 

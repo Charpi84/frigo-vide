@@ -2,13 +2,25 @@ import { useNavigate } from "react-router";
 import { useIngredient } from "../context/IngredientContext";
 import Ingredients from './../components/Ingredients';
 import Navbar from './../components/Navbar';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Accueil() {
 
   const { ingredient, currentIngredient, setCurrentIngredient, addIngredient } = useIngredient()
   const navigate = useNavigate()
-  const [accueil, setAccueil] = useState("true")
+  const [accueil, setAccueil] = useState(true)
+
+  useEffect(() => {
+    const dejaVu = localStorage.getItem("accueilVu")
+    if (dejaVu === "1") {
+      setAccueil(false)
+    }
+  }, [])
+
+    function passerAccueil() {
+    setAccueil(false)
+    localStorage.setItem("accueilVu", "1")
+  }
 
   return (
     <div className="content">
@@ -24,7 +36,7 @@ export default function Accueil() {
             <p>L’application qui t’aide à mieux manger en utilisant tes restes et en économisant au maximum !</p>
           </div>
           <div className="accueil-btn">
-            <div className="btn" onClick={() => setAccueil(false)}>Qu'y a t-il dans ton frigo?</div>
+            <div className="btn" onClick={passerAccueil}>Qu'y a t-il dans ton frigo?</div>
           </div>
         </div>
       ) : (
